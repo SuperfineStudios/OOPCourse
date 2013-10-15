@@ -36,3 +36,11 @@ float Account::WithdrawAmt(void);
 }
 float Account::getFinalBalance(void);
 void Account::PrintStatement(void);
+{
+   //Printout of accountholder summary
+   Account  acct(fname, sname, SIN, accounttype, transactions, balance);
+   cout << endl << "Account Print Summary" << endl;
+   cout << acct.getfirstname() << endl;
+   cout << acct.getsurname() << endl;
+   cout << acct.getsocialinsurance() << endl;
+}
