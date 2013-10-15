@@ -49,9 +49,10 @@ class utility
 	{
 		string m;
 		char c;
-		cout << "Enter a string: " << endl;
+		cout << "Enter a word: " << endl;
 		cin >> m;
-		cout << "Enter a character: ";
+		fflush(stdin);
+		cout << endl << "Enter a character: ";
 		cin >> c;
 		int a_count = count(m,c);
 
@@ -80,7 +81,7 @@ int main()
 		int stringchoice;
 		for(;;)
 		{
-			cout << "Enter 1 to see the number of character instances in a word, or anything else to exit" << endl;
+			cout << "Enter 1 to see the number of character instances in a word, or anything else to exit." << endl;
 			cin >> stringchoice;
 			if(stringchoice == 1)
 				utility::f();
