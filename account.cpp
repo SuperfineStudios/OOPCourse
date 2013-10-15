@@ -3,19 +3,27 @@
 
 Account::Account(char *fname, char *sname, int SIN, char *accounttype, int transactions, float balance)
 {
-   strcpy(szFName, FirstName);
-   strcpy(szLName, LastName);
-   nIncome = Income;
+   strcpy(firstname, fname);
+   strcpy(surname, sname);
+   socialinsurance = SIN;
+   strcpy(accttype, accounttype);
+   ttransactions = transactions;
+   fbalance = balance;
 }
 
-char *Employee::getFName(void)
+char *Account::getFName(void)
 {
-   return szFName;
+   return firstame;
 }
 
 char *Employee::getLName(void)
 {
-   return szLName;
+   return surname;
+}
+
+int Account::getsocialinsurance(void)
+{
+   return socialinsurance;
 }
 
 float Account::DepositAmt(void);
