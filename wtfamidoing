@@ -6,6 +6,8 @@ using namespace std;
 
 class utility
 {
+/* Converting kg to lbs, and vice-versa */
+
 	public:
 	static float KtoP(void)
 	{
@@ -33,7 +35,8 @@ class utility
 		return K;
 	}
 
-	static int count(const string& s, char c)	// count occurrences of c in s
+	/* Finding the number of instances of a character in a word */
+	static int count(const string& s, char c)
 	{
 		int n = 0;
 		string::const_iterator i = find(s.begin(),s.end(),c);
@@ -58,6 +61,18 @@ class utility
 
 		cout << "\"" << m << "\" contains " << a_count << " " << c <<"'s" << endl;
 	}
+		/* Reversing a word. */
+		static void reverse(string werd)
+		{
+			if(werd == "")
+				return;
+			else
+			{
+				reverse(werd.substr(1));
+				cout << werd.at(0);
+			}
+
+		}
 };
 
 /* int main()
@@ -72,7 +87,7 @@ class utility
 int main()
 {
 	int funcchoice;
-	cout << "Enter 1 to see the number of character instances in a string, or enter 2 to do a mass/weight conversion." << endl;
+	cout << "Enter 1 to see the number of character instances in a string" << endl << "Enter 2 to do a mass/weight conversion " << endl << "Enter 3 to reverse a word" << endl;
 	cin >> funcchoice;
 	cout << endl;
 
@@ -111,5 +126,19 @@ int main()
 			}
 		}
 	}
+	else if(funcchoice == 3)
+	{
+		string werd;
+		for(;;)
+		{
+			cout << endl << "Enter a word: ";
+			cin >> werd;
+			fflush(stdin);
+
+			cout << endl << "Reversed word is: ";
+			utility::reverse(werd);
+		}
+	}
+
 	return 0;
 }
