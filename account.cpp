@@ -58,6 +58,8 @@ void Account::PrintStatement(void);
    cout << acct.getfirstname() << endl;
    cout << acct.getsurname() << endl;
    cout << acct.getsocialinsurance() << endl;
+   cout << acct.DepositAmt() << endl;
+   cout << acct.WithdrawAmt() << endl;
    cout << acct.getFinalBalance() << endl;
    cout << acct.*getaccttype(void); << endl;
 }
