@@ -5,9 +5,6 @@ using namespace std;
 
 class utility
 {
-	
-
-
 	public:
 	static float KtoP(void)
 	{
@@ -18,8 +15,8 @@ class utility
 		cout << endl;
 
 		P = K*2.205;
+		cout << K << " kg is " << P << " lbs" << endl;
 		return P;
-	
 	}
 	
 	static float PtoK(void)
@@ -31,37 +28,35 @@ class utility
 		cout << endl;
 
 		K = P/2.205;
+		cout << P << " lbs is " << K << " kg" << endl;
 		return K;
-	
 	}
-	
 };
 
-
-int main()
+/* int main()
 {
 	cout << "Convert Kilograms to pounds?";
 
 	utility::KtoP();
 	utility::PtoK();
-
 }
-
-
-/*
+*/
 int main()
 {
 	int choice;
+	for(;;)
 	{
-		cout << "Press 1 to convert from lbs to kg or press 2 to convert from kg to lbs: ";
+		cout << "Press 1 to convert kg to lbs or press 2 to convert lbs to kg: ";
 		cin >> choice;
 
 		if(choice == 1)
 		{
-			cout << "Enter a mass in kg: ";
-			cin >> K;
+			utility::KtoP();
+		}
+		else if(choice == 2)
+		{
+			utility::PtoK();
 		}
 	}
 	return 0;
 }
-*/
