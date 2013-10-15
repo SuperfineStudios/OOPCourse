@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Account.h"
+#include "account.cpp"
 using namespace std;
 
 
@@ -20,17 +21,26 @@ int main()
    cout << "Accountholder's SIN: " ;
    cin >> SIN;
    fflush(stdin);
+   
+   cout << acct.*getaccttype(); << endl;
 
    cout << endl;
-   cout << "Employee's Income Raise: " << flush;
-   cin >> Income;
-   em.setIncomeRaise(Income);
+   cout << "Deposit: " << flush;
+   cin >> cashin;
+   acct.DepositAmt(cashin);
 
    cout << endl;
-   cout << endl << "Employee's Personal Information" << endl;
-   cout << em.getFName() << endl;
-   cout << em.getLName() << endl;
-   cout << em.getIncome() << endl;
+   cout << "Withdraw: " << flush;
+   cin >> cashout;
+   cout << acct.WithdrawAmt(cashout);
+
+   cout << endl;
+   cout << endl << "Account Print Summary" << endl;
+   cout << acct.getfirstname(fname) << endl;
+   cout << acct.getsurname(sname) << endl;
+   cout << acct.getsocialinsurance(SIN) << endl;
+   cout << acct.getFinalBalance(casnhin, cashout) << endl;
+   cout << acct.*getaccttype(); << endl;
 
    return (0);
 }
