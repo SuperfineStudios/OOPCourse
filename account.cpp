@@ -1,7 +1,7 @@
 #include<string.h>
 #include"Account.h"
 
-Account::Account(char *fname, char *sname, int SIN, char *accounttype, int transactions, float balance)
+Account::Account(char *fname, char *sname, int SIN, char[] *accounttype, int transactions, float balance, float cashin, float cashout)
 {
    strcpy(firstname, fname);
    strcpy(surname, sname);
@@ -28,13 +28,28 @@ int Account::getsocialinsurance(void)
 
 float Account::DepositAmt(void);
 {
-
+   cout << "Enter deposit amount: ";
+   cin >> cashin;
+   return cashin;
 }
 float Account::WithdrawAmt(void);
 {
-
+   cout << "Enter withdrawal amount: ";
+   cin >> cashout;
+   return cashout;
 }
 float Account::getFinalBalance(void);
+{
+   balance = balance+cashin-cashout;
+   return balance;
+}
+char[] Account:*getaccttype(void);
+{
+   cout << "What type of account do you use? Chequing or Savings?" << endl;
+   cin >> accounttype;
+   cout << accounttype;
+}
+
 void Account::PrintStatement(void);
 {
    //Printout of accountholder summary
@@ -43,4 +58,6 @@ void Account::PrintStatement(void);
    cout << acct.getfirstname() << endl;
    cout << acct.getsurname() << endl;
    cout << acct.getsocialinsurance() << endl;
+   cout << acct.getFinalBalance() << endl;
+   cout << acct.*getaccttype(void); << endl;
 }
