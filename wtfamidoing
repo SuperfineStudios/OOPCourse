@@ -132,7 +132,7 @@ int main()
 		for(;;)
 		{
 			cout << endl << "Enter a word: ";
-			cin >> werd;
+			cin.getline(werd, 256);
 			fflush(stdin);
 
 			cout << endl << "Reversed word is: ";
