@@ -1,35 +1,54 @@
 #include<iostream>
+#include<string>
 
 using namespace std;
 
 class utility
 {
-	float K, P;
+	
+
 
 	public:
-	utility(float *K, float *P);
-	float KtoP();
-	float PtoK();
+	static float KtoP(void)
+	{
+		float K, P;
+		
+		cout << "Enter mass in kg: ";
+		cin >> K;
+		cout << endl;
+
+		P = K*2.205;
+		return P;
+	
+	}
+	
+	static float PtoK(void)
+	{
+		float K, P;
+		
+		cout << "Enter mass in pounds: ";
+		cin >> P;
+		cout << endl;
+
+		K = P/2.205;
+		return K;
+	
+	}
+	
 };
 
-float utility::KtoP()
-{
-	cout << "Enter mass in kg: ";
-	cin >> K;
-	cout << endl;
 
-	P = K*2.205;
+int main()
+{
+	cout << "Convert Kilograms to pounds?";
+
+	utility::KtoP();
+	utility::PtoK();
+
 }
 
-float utility::PtoK()
-{
-	cout << "Enter mass in pounds: ";
-	cin >> P;
-	cout << endl;
 
-	K = P/2.205;
-}
-
+/*
 int main()
 {
 	int choice;
@@ -45,3 +64,4 @@ int main()
 	}
 	return 0;
 }
+*/
