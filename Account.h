@@ -18,6 +18,8 @@ public:
   float DepositAmt(void);
   float WithdrawAmt(void);
   float getFinalBalance(void);
+  int gettransactions(void);
+  char *getaccttype(void);
   void PrintStatement(void);
 };
 #endif
