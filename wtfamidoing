@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<algorithm>
 
 using namespace std;
 
@@ -31,6 +32,31 @@ class utility
 		cout << P << " lbs is " << K << " kg" << endl;
 		return K;
 	}
+
+	static int count(const string& s, char c)	// count occurrences of c in s
+	{
+		int n = 0;
+		string::const_iterator i = find(s.begin(),s.end(),c);
+		while (i != s.end())
+		{
+			++n;
+			i = find(i+1,s.end(),c);
+		}
+		return n;
+	}
+
+	static void f()
+	{
+		string m;
+		char c;
+		cout << "Enter a string: " << endl;
+		cin >> m;
+		cout << "Enter a character: ";
+		cin >> c;
+		int a_count = count(m,c);
+
+		cout << "\"" << m << "\" contains " << a_count << " " << c <<"'s" << endl;
+	}
 };
 
 /* int main()
@@ -41,21 +67,47 @@ class utility
 	utility::PtoK();
 }
 */
+
 int main()
 {
-	int choice;
-	for(;;)
-	{
-		cout << "Press 1 to convert kg to lbs or press 2 to convert lbs to kg: ";
-		cin >> choice;
+	int funcchoice;
+	cout << "Enter 1 to see the number of character instances in a string, or enter 2 to do a mass/weight conversion." << endl;
+	cin >> funcchoice;
+	cout << endl;
 
-		if(choice == 1)
+	if(funcchoice == 1)
+	{
+		int stringchoice;
+		for(;;)
 		{
-			utility::KtoP();
+			cout << "Enter 1 to see the number of character instances in a word, or anything else to exit" << endl;
+			cin >> stringchoice;
+			if(stringchoice == 1)
+				utility::f();
+			else
+				break;
 		}
-		else if(choice == 2)
+	}
+	else if(funcchoice == 2)
+	{
+		int korp;
+		for(;;)
 		{
-			utility::PtoK();
+			cout << "Press 1 to convert kg to lbs or press 2 to convert lbs to kg, or anything else to exit: ";
+			cin >> korp;
+
+			if(korp == 1)
+			{
+				utility::KtoP();
+			}
+			else if(korp == 2)
+			{
+				utility::PtoK();
+			}
+			else
+			{
+				break;
+			}
 		}
 	}
 	return 0;
